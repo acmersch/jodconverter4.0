@@ -7,9 +7,9 @@ import com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConne
 import com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter;
 
 /** 
- * @author Éò³¿»Ô E-mail: acmersch@163.com
- * @version ´´½¨Ê±¼ä£º2013-5-6 ÉÏÎç10:23:14 
- * ÀàËµÃ÷ 
+ * @author ï¿½ò³¿»ï¿½ E-mail: acmersch@163.com
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2013-5-6 ï¿½ï¿½ï¿½ï¿½10:23:14 
+ * ï¿½ï¿½Ëµï¿½ï¿½ 
  */
 public class Main {
 
@@ -32,17 +32,17 @@ public class Main {
 
 		@Override
 		public void run() {
-			OpenOfficeConnection connection = new SocketOpenOfficeConnection("192.168.0.119", 8080);   
+			OpenOfficeConnection connection = new SocketOpenOfficeConnection(8080);   
 			  
 			try {
 				connection.connect();
 				long t1 = System.currentTimeMillis();
-				System.out.println(input+"ÎÄ¼þ¿ªÊ¼×ª»»");
+				System.out.println(input+"ï¿½Ä¼ï¿½ï¿½ï¿½Ê¼×ªï¿½ï¿½");
 				DocumentConverter converter = new OpenOfficeDocumentConverter(connection);
 				
 				converter.convert(input, output);
 				long t2 = System.currentTimeMillis();
-				System.out.println(input+"ÎÄ¼þ×ª»»½áÊø: »¨·Ñ "+(t2-t1)+" ms");
+				System.out.println(input+"ï¿½Ä¼ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ "+(t2-t1)+" ms");
 			} catch (ConnectException e) {
 				e.printStackTrace();
 			} finally {
